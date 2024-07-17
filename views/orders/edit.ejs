@@ -1,0 +1,11 @@
+<!-- views/orders/edit.ejs -->
+<h1>Edit Order</h1>
+<form action="/orders/<%= order.order_id %>" method="POST">
+    <label for="order_date">Order Date:</label>
+    <input type="date" id="order_date" name="order_date" value="<%= order.order_date %>" required><br><br>
+    <label for="customer_id">Customer ID:</label>
+    <input type="text" id="customer_id" name="customer_id" value="<%= order.customer_id %>" required><br><br>
+    <label for="total_amount">Total Amount:</label>
+    <input type="number" id="total_amount" name="total_amount" value="<%= order.total_amount %>" step="0.01" required><br><br>
+    <button type="submit">Update Order</button>
+</form>

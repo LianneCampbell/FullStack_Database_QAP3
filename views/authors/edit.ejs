@@ -1,0 +1,9 @@
+<!-- views/authors/edit.ejs -->
+<h1>Edit Author</h1>
+<form action="/authors/<%= author.author_id %>" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="<%= author.name %>" required><br><br>
+    <label for="biography">Biography:</label><br>
+    <textarea id="biography" name="biography" rows="4" cols="50"><%= author.biography %></textarea><br><br>
+    <button type="submit">Update Author</button>
+</form>

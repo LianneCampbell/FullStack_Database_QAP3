@@ -1,0 +1,7 @@
+<!-- views/orders/index.ejs -->
+<h1>Orders</h1>
+<ul>
+    <% orders.forEach(order => { %>
+        <li>Order ID: <%= order.order_id %> - Date: <%= order.order_date %> - Amount: <%= order.total_amount %></li>
+    <% }); %>
+</ul>
