@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../db'); // Assuming db.js exports the pool
+const pool = require('../services/sql/db'); // Adjust path as necessary
 
 // Get all books
 router.get('/', async (req, res) => {
@@ -14,8 +14,8 @@ router.get('/', async (req, res) => {
 });
 
 // Create new book form
-router.get('/new', (req, res) => {
-    res.render('books/new');
+router.get('/create', (req, res) => {
+    res.render('books/create');
 });
 
 // Create new book
