@@ -1,7 +1,26 @@
 <!-- views/authors/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors</title>
+</head>
+<body>
 <h1>Authors</h1>
 <ul>
     <% authors.forEach(author => { %>
-        <li><%= author.name %> - <%= author.biography %></li>
+        <li>
+            <%= author.name %> - <%= author.biography %>
+            <a href="/authors/<%= author.author_id %>/edit">Edit</a>
+            <form action="/authors/<%= author.author_id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this author?');" style="display: inline;">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
     <% }); %>
 </ul>
+<a href="/authors/create">Create New Author</a>
+<br>
+<a href="/">Back to home</a>
+</body>
+</html>
