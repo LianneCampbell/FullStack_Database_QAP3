@@ -1,0 +1,7 @@
+<!-- views/customers/index.ejs -->
+<h1>Customers</h1>
+<ul>
+    <% customers.forEach(customer => { %>
+        <li><%= customer.name %> - <%= customer.email %></li>
+    <% }); %>
+</ul>
