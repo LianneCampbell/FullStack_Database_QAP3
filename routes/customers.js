@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../services/sql/db'); // Adjust path as necessary
+
 // Get all customers
 router.get('/', async (req, res) => {
     try {
@@ -12,17 +13,28 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Get all customers as JSON
+router.get('/api', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM Customer');
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: err.message });
+    }
+});
+
 // Create new customer form
-router.get('/new', (req, res) => {
-    res.render('customers/new');
+router.get('/create', (req, res) => {
+    res.render('customers/create');
 });
 
 // Create new customer
 router.post('/', async (req, res) => {
     const { name, email, password } = req.body;
     try {
-        await pool.query(
-            'INSERT INTO Customer (name, email, password) VALUES ($1, $2, $3)',
+        const result = await pool.query(
+            'INSERT INTO Customer (name, email, password) VALUES ($1, $2, $3) RETURNING *',
             [name, email, password]
         );
         res.redirect('/customers');
@@ -49,8 +61,8 @@ router.put('/:id', async (req, res) => {
     const { id } = req.params;
     const { name, email, password } = req.body;
     try {
-        await pool.query(
-            'UPDATE Customer SET name = $1, email = $2, password = $3 WHERE customer_id = $4',
+        const result = await pool.query(
+            'UPDATE Customer SET name = $1, email = $2, password = $3 WHERE customer_id = $4 RETURNING *',
             [name, email, password, id]
         );
         res.redirect('/customers');
@@ -64,7 +76,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     try {
-        await pool.query('DELETE FROM Customer WHERE customer_id = $1', [id]);
+        await pool.query('DELETE FROM Customer WHERE customer_id = $1');
         res.redirect('/customers');
     } catch (err) {
         console.error(err);
