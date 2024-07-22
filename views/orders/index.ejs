@@ -1,25 +1,41 @@
+<!-- This is the main HTML document structure for the Orders page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tag for character encoding -->
     <meta charset="UTF-8">
+    
+    <!-- Title of the webpage -->
     <title>Orders</title>
+    
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Preconnect and link to an external Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Main heading for the Orders page -->
     <h1>Orders</h1>
     <hr>
     <br>
+    
+    <!-- Link to create a new order -->
     <div class="textbox">
-    <a href="/orders/create">Create New Order</a>
-</div>
+        <a href="/orders/create">Create New Order</a>
+    </div>
     <br>
+    
+    <!-- Unordered list to display all orders -->
     <ul>
+        <!-- Loop through the orders array and display each order -->
         <% orders.forEach(order => { %>
             <li>
                 Order ID: <%= order.order_id %> - Date: <%= order.order_date %> - Amount: <%= order.total_amount %>
+                <!-- Link to edit the order -->
                 <a href="/orders/<%= order.order_id %>/edit">Edit</a>
+                <!-- Form to delete the order with a confirmation prompt -->
                 <form action="/orders/<%= order.order_id %>?_method=DELETE" method="POST" onsubmit="return confirm('Are you sure you want to delete this order?');" style="display: inline;">
                     <button type="submit">Delete</button>
                 </form>
@@ -27,16 +43,24 @@
         <% }); %>
     </ul>
     <br>
+    
+    <!-- Link to view orders as JSON -->
     <div class="textbox">
-    <a href="/orders/api">View as JSON</a>
-</div>
+        <a href="/orders/api">View as JSON</a>
+    </div>
     <br>
+    
+    <!-- Image displayed on the Orders page -->
     <img src="/images/image-from-rawpixel-id-15200597-png.png" alt="BookImage" width="400"/>
     <br>
     <hr>
+    
+    <!-- Link to go back to the home page -->
     <div class="textbox">
-    <a href="/">Back to home</a>
+        <a href="/">Back to home</a>
     </div>
+    
+    <!-- Footer section with copyright information -->
     <footer>
         <p>&copy; Lianne Campbell 2024</p> 
     </footer>

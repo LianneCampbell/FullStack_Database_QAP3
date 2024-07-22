@@ -1,37 +1,66 @@
+<!-- This is the HTML document structure for the Edit Customer page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tag for character encoding -->
     <meta charset="UTF-8">
+    
+    <!-- Title of the webpage -->
     <title>Edit Customer</title>
+    
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Preconnect and link to an external Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Main heading for the Edit Customer page -->
     <h1>Edit Customer</h1>
     <hr>
     <br>
+    
+    <!-- Form to edit an existing customer's information -->
     <form action="/customers/<%= customer.customer_id %>?_method=PUT" method="POST">
+        <!-- Hidden input to specify the PUT method for updating -->
         <input type="hidden" name="_method" value="PUT">
+        
+        <!-- Input field for the customer's name -->
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="<%= customer.name %>" required><br><br>
+        
+        <!-- Input field for the customer's email -->
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" value="<%= customer.email %>" required><br><br>
+        
+        <!-- Input field for the customer's address -->
         <label for="address">Address:</label>
         <input type="text" id="address" name="address" value="<%= customer.address %>" required><br><br>
+        
+        <!-- Input field for the customer's password -->
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
+        
+        <!-- Button to submit the form and update customer details -->
         <button type="submit">Update Customer</button>
     </form>
+    
     <br>
-<img src="/images/image-from-rawpixel-id-6287687-png.png" alt="BookImage" width="400"/>
-<br>
-<hr>
-<div class="textbox">
-<a href="/customers/">Go Back</a>
-</div>
-<footer>
-    <p>&copy; Lianne Campbell 2024</p> 
-</footer>
+    
+    <!-- Image displayed on the Edit Customer page -->
+    <img src="/images/image-from-rawpixel-id-6287687-png.png" alt="CustomerImage" width="400"/>
+    <br>
+    <hr>
+    
+    <!-- Link to go back to the customers list -->
+    <div class="textbox">
+        <a href="/customers/">Go Back</a>
+    </div>
+    
+    <!-- Footer section with copyright information -->
+    <footer>
+        <p>&copy; Lianne Campbell 2024</p> 
+    </footer>
 </body>
 </html>

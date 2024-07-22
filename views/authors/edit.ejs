@@ -1,34 +1,57 @@
-<!-- views/authors/edit.ejs -->
+<!-- This is the HTML document structure for the Edit Author page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tag for character encoding -->
     <meta charset="UTF-8">
+    
+    <!-- Title of the webpage -->
     <title>Edit Author</title>
+    
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Preconnect and link to an external Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1 class="playwrite-title">Edit Author</h1>
-<hr>
-<br>
-<form action="/authors/<%= author.author_id %>?_method=PUT" method="POST">
-    <input type="hidden" name="_method" value="PUT">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="<%= author.name %>" required><br><br>
-    <label for="biography">Biography:</label><br>
-    <textarea id="biography" name="biography" rows="4" cols="50"><%= author.biography %></textarea><br><br>
-    <button type="submit">Update Author</button>
-</form>
-<br>
-<img src="/images/image-from-rawpixel-id-6287687-png.png" alt="BookImage" width="400"/>
-<br>
-<hr>
-<div class="textbox">
-<a href="/authors/">Go Back</a>
-</div>
-<footer>
-    <p>&copy; Lianne Campbell 2024</p> 
-</footer>
+    <!-- Main heading for the Edit Author page -->
+    <h1 class="playwrite-title">Edit Author</h1>
+    <hr>
+    <br>
+    
+    <!-- Form to update an existing author's information -->
+    <form action="/authors/<%= author.author_id %>?_method=PUT" method="POST">
+        <!-- Hidden input to override the method to PUT -->
+        <input type="hidden" name="_method" value="PUT">
+        
+        <!-- Input field for the author's name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= author.name %>" required><br><br>
+        
+        <!-- Textarea for the author's biography -->
+        <label for="biography">Biography:</label><br>
+        <textarea id="biography" name="biography" rows="4" cols="50"><%= author.biography %></textarea><br><br>
+        
+        <!-- Button to submit the form and update the author's information -->
+        <button type="submit">Update Author</button>
+    </form>
+    
+    <br>
+    <!-- Image displayed on the Edit Author page -->
+    <img src="/images/image-from-rawpixel-id-6287687-png.png" alt="AuthorImage" width="400"/>
+    <br>
+    <hr>
+    
+    <!-- Link to go back to the list of authors -->
+    <div class="textbox">
+        <a href="/authors/">Go Back</a>
+    </div>
+    
+    <!-- Footer section with copyright information -->
+    <footer>
+        <p>&copy; Lianne Campbell 2024</p> 
+    </footer>
 </body>
 </html>

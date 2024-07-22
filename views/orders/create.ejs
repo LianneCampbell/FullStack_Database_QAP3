@@ -1,34 +1,58 @@
+<!-- This is the HTML document structure for the Create New Order page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tag for character encoding -->
     <meta charset="UTF-8">
+    
+    <!-- Title of the webpage -->
     <title>Create New Order</title>
+    
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Preconnect and link to an external Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Main heading for the Create New Order page -->
     <h1>Create New Order</h1>
     <hr>
     <br>
+    
+    <!-- Form to create a new order -->
     <form action="/orders" method="POST">
+        <!-- Input for the order date -->
         <label for="order_date">Order Date:</label>
         <input type="date" id="order_date" name="order_date" required><br><br>
+        
+        <!-- Input for the customer ID -->
         <label for="customer_id">Customer ID:</label>
         <input type="number" id="customer_id" name="customer_id" required><br><br>
+        
+        <!-- Input for the total amount -->
         <label for="total_amount">Total Amount:</label>
         <input type="number" id="total_amount" name="total_amount" required><br><br>
+        
+        <!-- Submit button to create the order -->
         <button type="submit">Create Order</button>
     </form>
     <br>
-<img src="/images/image-from-rawpixel-id-6501156-png.png" alt="BookImage" width="400"/>
-<br>
-<hr>
-<div class="textbox">
-<a href="/orders/">Go Back</a>
-</div>
-<footer>
-    <p>&copy; Lianne Campbell 2024</p> 
-</footer>
+    
+    <!-- Image displayed on the Create New Order page -->
+    <img src="/images/image-from-rawpixel-id-6501156-png.png" alt="BookImage" width="400"/>
+    <br>
+    <hr>
+    
+    <!-- Link to go back to the orders list -->
+    <div class="textbox">
+        <a href="/orders/">Go Back</a>
+    </div>
+    
+    <!-- Footer section with copyright information -->
+    <footer>
+        <p>&copy; Lianne Campbell 2024</p> 
+    </footer>
 </body>
 </html>

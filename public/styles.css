@@ -1,89 +1,100 @@
-/* public/css/styles.css */
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Default font */
     margin: 90px;
-    margin-right: 550px;
-    margin-left: 550px;
+    margin-right: 550px; /* Adjusts the right margin */
+    margin-left: 550px;  /* Adjusts the left margin */
     padding: 0;
-    background-image: url("/images/image-from-rawpixel-id-10262952-jpeg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
+    background-image: url("/images/image-from-rawpixel-id-10262952-jpeg.jpg"); /* Background image */
+    background-repeat: no-repeat; /* Prevents background image from repeating */
+    background-size: cover; /* Scales the background image to cover the entire area */
+    text-align: center; /* Center-aligns text */
 }
 
+/* Header styling */
 h1, h2, h3, h4, h5, h6 {
-    color: #333;
+    color: #333; /* Dark gray color for headers */
 }
 
+/* Unordered list styling */
 ul {
-    list-style: none;
-    padding: 0;
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
 }
 
+/* List item styling */
 ul li {
-    background: #fff;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    background: #fff; /* White background */
+    margin: 10px 0; /* Vertical margin */
+    padding: 10px; /* Padding inside the list item */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
 }
 
+/* Link styling */
 a {
-    text-decoration: none;
-    color: #3498db;
+    text-decoration: none; /* Removes underline from links */
+    color: #3498db; /* Blue color for links */
 }
 
+/* Link hover effect */
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
 
+/* Form styling */
 form {
-    display: inline;
+    display: inline; /* Displays form inline */
 }
 
+/* Button styling */
 button {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
+    background-color: #e74c3c; /* Red background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 5px 10px; /* Padding inside the button */
+    border-radius: 3px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
+/* Button hover effect */
 button:hover {
-    background-color: #c0392b;
+    background-color: #c0392b; /* Darker red background on hover */
 }
 
-
+/* Custom title styling */
 .playwrite-title {
-  font-family: "Playwrite IS", cursive;
-  font-optical-sizing: auto;
-  font-weight: bold;
-  font-style: bold;
-  font-size: 60px;
+    font-family: "Playwrite IS", cursive; /* Custom cursive font */
+    font-optical-sizing: auto;
+    font-weight: bold; /* Bold text */
+    font-style: bold; /* Bold style */
+    font-size: 60px; /* Large font size */
 }
 
+/* Box styling for text sections */
 .textbox {
-    border: 2px #333;
-    border-radius: 5px;
-    background-color: #fff;
-    width: 400px;
-    text-align: center;
-    margin-left: 35%;
+    border: 2px #333; /* Dark gray border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    width: 400px; /* Fixed width */
+    text-align: center; /* Center-aligns text */
+    margin-left: 35%; /* Center alignment with left margin */
 }
 
+/* Header 1 specific styling */
 h1 {
-    font-family: "Playwrite IS", cursive;
+    font-family: "Playwrite IS", cursive; /* Custom cursive font */
     font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: bold;
-    font-size: 60px;
+    font-weight: bold; /* Bold text */
+    font-style: bold; /* Bold style */
+    font-size: 60px; /* Large font size */
 }
 
+/* Footer styling */
 footer {
-    font-family: "Playwrite IS", cursive;
+    font-family: "Playwrite IS", cursive; /* Custom cursive font */
     font-optical-sizing: auto;
-    font-weight: lighter;
-    font-style: bold;
-    font-size: 17px;
+    font-weight: lighter; /* Lighter text weight */
+    font-style: bold; /* Bold style */
+    font-size: 17px; /* Medium font size */
 }
