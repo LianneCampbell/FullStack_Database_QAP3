@@ -2,6 +2,7 @@
 
 ## Create Statements
 1. **Create Tables**
+
 ***Book Table***
 - CREATE TABLE Book (
     book_id SERIAL PRIMARY KEY,
@@ -44,6 +45,7 @@
 );
 
 1. **Insert Statements**
+
 ***Insert Sample Data***
 - INSERT INTO Author (name, biography) VALUES ('Author Name', 'Biography...');
 - INSERT INTO Book (title, price, genre, author_id) VALUES ('Book Title', 19.99, 'Fiction', 1);
@@ -59,6 +61,7 @@
 - SELECT * FROM OrderItem;
 
 1. **Update and Delete Statements**
+
 ***Update Data***
 - UPDATE Book SET price = 18.99 WHERE book_id = 1;
 
