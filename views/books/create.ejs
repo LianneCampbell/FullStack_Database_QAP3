@@ -1,36 +1,62 @@
+<!-- This is the HTML document structure for the Create New Book page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tag for character encoding -->
     <meta charset="UTF-8">
+    
+    <!-- Title of the webpage -->
     <title>New Book</title>
+    
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Preconnect and link to an external Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Main heading for the Create New Book page -->
     <h1>Add New Book</h1>
     <hr>
     <br>
+    
+    <!-- Form to add a new book -->
     <form action="/books" method="POST">
+        <!-- Input field for the book title -->
         <label for="title">Title:</label>
         <input type="text" name="title" id="title" required>
+        
+        <!-- Input field for the book price -->
         <label for="price">Price:</label>
         <input type="number" name="price" id="price" required>
+        
+        <!-- Input field for the book genre -->
         <label for="genre">Genre:</label>
         <input type="text" name="genre" id="genre" required>
+        
+        <!-- Input field for the author ID -->
         <label for="author_id">Author ID:</label>
         <input type="number" name="author_id" id="author_id" required>
+        
+        <!-- Button to submit the form and add the book -->
         <button type="submit">Add Book</button>
     </form>
     <br>
-<img src="/images/image-from-rawpixel-id-6501156-png.png" alt="BookImage" width="400"/>
-<br>
-<hr>
-<div class="textbox">
-<a href="/books/">Go Back</a>
-</div>
-<footer>
-    <p>&copy; Lianne Campbell 2024</p> 
-</footer>
+    
+    <!-- Image displayed on the Create New Book page -->
+    <img src="/images/image-from-rawpixel-id-6501156-png.png" alt="BookImage" width="400"/>
+    <br>
+    <hr>
+    
+    <!-- Link to go back to the list of books -->
+    <div class="textbox">
+        <a href="/books/">Go Back</a>
+    </div>
+    
+    <!-- Footer section with copyright information -->
+    <footer>
+        <p>&copy; Lianne Campbell 2024</p> 
+    </footer>
 </body>
 </html>

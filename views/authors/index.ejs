@@ -1,42 +1,69 @@
-<!-- views/authors/index.ejs -->
+<!-- This is the HTML document structure for the Authors Index page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tag for character encoding -->
     <meta charset="UTF-8">
+    
+    <!-- Title of the webpage -->
     <title>Authors</title>
+    
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Preconnect and link to an external Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1 class="playwrite-title">Authors</h1>
-<hr>
-<div class="textbox">
-<a href="/authors/create">Create New Author</a>
-</div>
-<ul>
-    <% authors.forEach(author => { %>
-        <li>
-            <%= author.name %> - <%= author.biography %>
-            <a href="/authors/<%= author.author_id %>/edit">Edit</a>
-            <form action="/authors/<%= author.author_id %>?_method=DELETE" method="POST" onsubmit="return confirm('Are you sure you want to delete this author?');" style="display: inline;">
-                <input type="hidden" name="_method" value="DELETE">
-                <button type="submit">Delete</button>
-            </form>
-        </li>
-    <% }); %>
-</ul>
-<div class="textbox">
-<a href="/authors/api">View as JSON</a>
-</div>
-<img src="/images/image-from-rawpixel-id-6503727-png.png" alt="BookImage" width="400"/>
-<br>
-<hr>
-<div class="textbox">
-<a href="/">Back to home</a>
-</div>
-<footer>
-    <p>&copy; Lianne Campbell 2024</p> 
-</footer>
+    <!-- Main heading for the Authors Index page -->
+    <h1 class="playwrite-title">Authors</h1>
+    <hr>
+    
+    <!-- Link to create a new author -->
+    <div class="textbox">
+        <a href="/authors/create">Create New Author</a>
+    </div>
+    
+    <!-- List of authors -->
+    <ul>
+        <% authors.forEach(author => { %>
+            <li>
+                <!-- Display author name and biography -->
+                <%= author.name %> - <%= author.biography %>
+                
+                <!-- Link to edit the author -->
+                <a href="/authors/<%= author.author_id %>/edit">Edit</a>
+                
+                <!-- Form to delete the author -->
+                <form action="/authors/<%= author.author_id %>?_method=DELETE" method="POST" onsubmit="return confirm('Are you sure you want to delete this author?');" style="display: inline;">
+                    <!-- Hidden input to override the method to DELETE -->
+                    <input type="hidden" name="_method" value="DELETE">
+                    <!-- Button to submit the form and delete the author -->
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    
+    <!-- Link to view authors as JSON -->
+    <div class="textbox">
+        <a href="/authors/api">View as JSON</a>
+    </div>
+    
+    <!-- Image displayed on the Authors Index page -->
+    <img src="/images/image-from-rawpixel-id-6503727-png.png" alt="AuthorImage" width="400"/>
+    <br>
+    <hr>
+    
+    <!-- Link to go back to the home page -->
+    <div class="textbox">
+        <a href="/">Back to home</a>
+    </div>
+    
+    <!-- Footer section with copyright information -->
+    <footer>
+        <p>&copy; Lianne Campbell 2024</p> 
+    </footer>
 </body>
 </html>

@@ -1,39 +1,66 @@
+<!-- This is the HTML document structure for the Books page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tag for character encoding -->
     <meta charset="UTF-8">
+    
+    <!-- Title of the webpage -->
     <title>Books</title>
+    
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Preconnect and link to an external Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Main heading for the Books page -->
     <h1>Books</h1>
     <hr>
     <br>
+    
+    <!-- Link to add a new book -->
     <div class="textbox">
-    <a href="/books/create">Add New Book</a>
+        <a href="/books/create">Add New Book</a>
     </div>
+    
+    <!-- List of books -->
     <ul>
         <% books.forEach(book => { %>
             <li>
+                <!-- Display book details -->
                 <%= book.title %> - <%= book.price %> - <%= book.genre %> 
+                
+                <!-- Link to edit a book -->
                 <a href="/books/<%= book.book_id %>/edit">Edit</a>
+                
+                <!-- Form to delete a book -->
                 <form action="/books/<%= book.book_id %>?_method=DELETE" method="POST" onsubmit="return confirm('Are you sure you want to delete this book?');" style="display: inline;">
+                    <!-- Button to submit the form and delete the book -->
                     <button type="submit">Delete</button>
                 </form>
             </li>
         <% }) %>
     </ul>
+    
+    <!-- Link to view books as JSON -->
     <div class="textbox">
-    <a href="/books/api">View as JSON</a>
+        <a href="/books/api">View as JSON</a>
     </div>
+    
+    <!-- Image displayed on the Books page -->
     <img src="/images/image-from-rawpixel-id-6727825-png.png" alt="BookImage" width="400"/>
     <br>
     <hr>
+    
+    <!-- Link to go back to the home page -->
     <div class="textbox">
-    <a href="/">Back to home</a>
+        <a href="/">Back to home</a>
     </div>
+    
+    <!-- Footer section with copyright information -->
     <footer>
         <p>&copy; Lianne Campbell 2024</p> 
     </footer>

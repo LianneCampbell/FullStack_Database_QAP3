@@ -1,31 +1,52 @@
-<!-- views/authors/create.ejs -->
+<!-- This is the HTML document structure for the Create New Author page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tag for character encoding -->
     <meta charset="UTF-8">
+    
+    <!-- Title of the webpage -->
     <title>New Author</title>
+    
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Preconnect and link to an external Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Create New Author</h1>
-<form action="/authors" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
-    <label for="biography">Biography:</label><br>
-    <textarea id="biography" name="biography" rows="4" cols="50"></textarea><br><br>
-    <button type="submit">Create Author</button>
-</form>
-<br>
-<img src="/images/image-from-rawpixel-id-6501156-png.png" alt="BookImage" width="400"/>
-<br>
-<hr>
-<div class="textbox">
-<a href="/authors/">Go Back</a>
-</div>
-<footer>
-    <p>&copy; Lianne Campbell 2024</p> 
-</footer>
+    <!-- Main heading for the Create New Author page -->
+    <h1>Create New Author</h1>
+    
+    <!-- Form to create a new author -->
+    <form action="/authors" method="POST">
+        <!-- Input field for the author's name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <!-- Textarea for the author's biography -->
+        <label for="biography">Biography:</label><br>
+        <textarea id="biography" name="biography" rows="4" cols="50"></textarea><br><br>
+        
+        <!-- Button to submit the form and create a new author -->
+        <button type="submit">Create Author</button>
+    </form>
+    
+    <br>
+    <!-- Image displayed on the Create New Author page -->
+    <img src="/images/image-from-rawpixel-id-6501156-png.png" alt="AuthorImage" width="400"/>
+    <br>
+    <hr>
+    
+    <!-- Link to go back to the list of authors -->
+    <div class="textbox">
+        <a href="/authors/">Go Back</a>
+    </div>
+    
+    <!-- Footer section with copyright information -->
+    <footer>
+        <p>&copy; Lianne Campbell 2024</p> 
+    </footer>
 </body>
 </html>
