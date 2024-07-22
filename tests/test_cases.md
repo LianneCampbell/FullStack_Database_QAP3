@@ -13,14 +13,12 @@
 
 1. **Customer Account Management**
    - As a customer, I can create an account with a unique email and password.
-   - As a customer, I can log in with my email and password.
    - As a customer, I can view and update my account details.
    - As a customer, I can delete my account.
 
 ## Orders
 
 1. **Order Management**
-   - As a customer, I can view my past orders.
    - As a customer, I can place a new order.
    - As a customer, I can update an existing order.
    - As a customer, I can delete an order.

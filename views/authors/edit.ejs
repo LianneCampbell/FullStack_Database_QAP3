@@ -4,10 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Author</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Edit Author</h1>
-<form action="/authors/<%= author.author_id %>" method="POST">
+<h1 class="playwrite-title">Edit Author</h1>
+<hr>
+<br>
+<form action="/authors/<%= author.author_id %>?_method=PUT" method="POST">
     <input type="hidden" name="_method" value="PUT">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" value="<%= author.name %>" required><br><br>
@@ -15,5 +20,15 @@
     <textarea id="biography" name="biography" rows="4" cols="50"><%= author.biography %></textarea><br><br>
     <button type="submit">Update Author</button>
 </form>
+<br>
+<img src="/images/image-from-rawpixel-id-6287687-png.png" alt="BookImage" width="400"/>
+<br>
+<hr>
+<div class="textbox">
+<a href="/authors/">Go Back</a>
+</div>
+<footer>
+    <p>&copy; Lianne Campbell 2024</p> 
+</footer>
 </body>
 </html>

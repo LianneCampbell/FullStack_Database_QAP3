@@ -1,0 +1,89 @@
+/* public/css/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 90px;
+    margin-right: 550px;
+    margin-left: 550px;
+    padding: 0;
+    background-image: url("/images/image-from-rawpixel-id-10262952-jpeg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: inline;
+}
+
+button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+
+.playwrite-title {
+  font-family: "Playwrite IS", cursive;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: bold;
+  font-size: 60px;
+}
+
+.textbox {
+    border: 2px #333;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 400px;
+    text-align: center;
+    margin-left: 35%;
+}
+
+h1 {
+    font-family: "Playwrite IS", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: bold;
+    font-size: 60px;
+}
+
+footer {
+    font-family: "Playwrite IS", cursive;
+    font-optical-sizing: auto;
+    font-weight: lighter;
+    font-style: bold;
+    font-size: 17px;
+}

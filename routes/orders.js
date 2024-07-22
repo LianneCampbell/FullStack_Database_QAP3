@@ -13,9 +13,20 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Get all orders as JSON
+router.get('/api', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM TotalOrder');
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: err.message });
+    }
+});
+
 // Create new order form
-router.get('/new', (req, res) => {
-    res.render('orders/new');
+router.get('/create', (req, res) => {
+    res.render('orders/create');
 });
 
 // Create new order

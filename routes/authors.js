@@ -13,6 +13,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Get all authors as JSON
+router.get('/api', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM Author');
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: err.message });
+    }
+});
+
 // Create new author form
 router.get('/create', (req, res) => {
     res.render('authors/create');
@@ -22,8 +33,8 @@ router.get('/create', (req, res) => {
 router.post('/', async (req, res) => {
     const { name, biography } = req.body;
     try {
-        await pool.query(
-            'INSERT INTO Author (name, biography) VALUES ($1, $2)',
+        const result = await pool.query(
+            'INSERT INTO Author (name, biography) VALUES ($1, $2) RETURNING *',
             [name, biography]
         );
         res.redirect('/authors');
@@ -50,8 +61,8 @@ router.put('/:id', async (req, res) => {
     const { id } = req.params;
     const { name, biography } = req.body;
     try {
-        await pool.query(
-            'UPDATE Author SET name = $1, biography = $2 WHERE author_id = $3',
+        const result = await pool.query(
+            'UPDATE Author SET name = $1, biography = $2 WHERE author_id = $3 RETURNING *',
             [name, biography, id]
         );
         res.redirect('/authors');
@@ -65,7 +76,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     try {
-        await pool.query('DELETE FROM Author WHERE author_id = $1', [id]);
+        await pool.query('DELETE FROM Author WHERE author_id = $1');
         res.redirect('/authors');
     } catch (err) {
         console.error(err);
