@@ -1,4 +1,5 @@
 # SQL Statements for PGAdmin
+
 **Create Statements**
 -- Book Table
 CREATE TABLE Book (
