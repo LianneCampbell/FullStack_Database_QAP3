@@ -1,3 +1,5 @@
+# SQL Statements for PGAdmin
+**Create Statements**
 -- Book Table
 CREATE TABLE Book (
     book_id SERIAL PRIMARY KEY,
@@ -38,7 +40,7 @@ CREATE TABLE OrderItem (
     quantity INT NOT NULL,
     price DECIMAL(10, 2) NOT NULL
 );
-
+**Insert Statements**
 -- Insert Sample Data
 INSERT INTO Author (name, biography) VALUES ('Author Name', 'Biography...');
 INSERT INTO Book (title, price, genre, author_id) VALUES ('Book Title', 19.99, 'Fiction', 1);
@@ -53,6 +55,7 @@ SELECT * FROM Customer;
 SELECT * FROM TotalOrder;
 SELECT * FROM OrderItem;
 
+**Update and Delete Statements**
 -- Update Data
 UPDATE Book SET price = 18.99 WHERE book_id = 1;
 
