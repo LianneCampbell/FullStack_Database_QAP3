@@ -1,6 +1,7 @@
 # SQL Statements for PGAdmin
 
-**Create Statements**
+## Create Statements
+**Create Tables**
 -- Book Table
 CREATE TABLE Book (
     book_id SERIAL PRIMARY KEY,
